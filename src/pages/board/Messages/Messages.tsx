@@ -2,7 +2,7 @@ import { Button, Input, Modal, Table } from "antd";
 import { useState } from "react";
 
 export const Messages = ()=>{
-    const [visible, setVisible] = useState(true)
+    const [visible, setVisible] = useState(false)
     const dataSource = [
         {
           key: '1',
@@ -48,7 +48,7 @@ export const Messages = ()=>{
     return <>
     <h1>Просмотр Сообщений</h1>
     <p>В таблице отображаются сообщения</p>
-    <Button type="primary">Создать сообщение</Button>
+    <Button type="primary" onClick={()=>setVisible(true)}>Создать сообщение</Button>
     <Modal onClose={()=>setVisible(false)} onCancel={()=>setVisible(false)}  open={visible}>
         <p>Тема письма</p>
         <Input />

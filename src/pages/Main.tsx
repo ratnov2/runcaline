@@ -1,15 +1,17 @@
 import { Button, Form, Input, Modal } from "antd"
 import { useState } from "react"
 import styles from './Main.module.scss'
+import { Link } from "react-router-dom"
 
 export const Main = ()=>{
-    const [visible, setVisible] = useState(true)
+    const [visible, setVisible] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [isLogin, setIsLogin] = useState(true)
 
     return <>
-    <Button >go to authorization</Button>
+    <Button onClick={()=>setVisible(true)}>go to authorization</Button>
+    <Link to={'/board'} > <Button>go to BOARD</Button></Link>
     <Modal footer={null} onClose={()=>setVisible(false)} onCancel={()=>setVisible(false)}  open={visible}>
         <h3>
             {isLogin? 'Авторизация' : 'Регистрация'}

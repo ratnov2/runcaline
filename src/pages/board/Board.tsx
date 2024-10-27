@@ -46,9 +46,7 @@ export const Board = ({children}:IBoard)=>{
       ref.current &&  setItems( [...items,...adminItems])
       ref.current = false
     };
-    useEffect(()=>{
-      toggle()
-    },[])
+  
     return <Layout style={{height:'100vh'}}>
     <Sider trigger={null} collapsible collapsed={collapsed}>
       <Header>
