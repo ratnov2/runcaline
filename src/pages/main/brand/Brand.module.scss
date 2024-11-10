@@ -1,0 +1,55 @@
+.brand {
+  position: relative;
+  padding: 70px 0;
+
+  h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 0 0 30px 0;
+  }
+
+  .bgImg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    transform: scale(1, -1);
+  }
+  .content {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    line-height: 23px;
+    .content__shared {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      span {
+        display: inline-block;
+      }
+      a {
+        display: inline-block;
+        color: #3500F6;
+      }
+      .content__circle {
+        position: relative;
+
+        img {
+          position: absolute;
+          width: 70px;
+          top: 50%;
+          transform: translateY(-50%) translateX(-50%);
+          left: calc(50% - 0px);
+        }
+      }
+    }
+    .content__text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

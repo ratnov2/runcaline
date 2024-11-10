@@ -1,7 +1,7 @@
 import { useState } from 'react'
-
 import './App.css'
-import { Main } from './pages/Main'
+import 'react-slideshow-image/dist/styles.css';
+import { Main } from './pages/main/Main'
 import { BrowserRouter, Outlet, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom';
 import { Board } from './pages/board/Board';
 import { Personal } from './pages/board/Personal/Personal';
@@ -11,16 +11,6 @@ import { Messages } from './pages/board/Messages/Messages';
 function App() {
   const [count, setCount] = useState(0)
 
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element:  <Main />,
-  //   },
-  //   {
-  //     path: "/board",
-  //     element:  <Board />,
-  //   },
-  // ]);
 
   return (
     <BrowserRouter>

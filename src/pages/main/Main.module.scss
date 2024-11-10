@@ -1,0 +1,63 @@
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+.sidebar {
+  position: relative;
+  .bgImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(1, -1);
+    z-index: -1;
+  }
+  header {
+    background-color: rgba(71, 71, 71, 0.35);
+    color: white;
+    ul {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      li {
+        text-transform: uppercase;
+        position: relative;
+        width: fit-content;
+        cursor: pointer;
+        transition: all 0.3s;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: -2px;
+          left: 0;
+          background-color: beige;
+          transition: all 0.3s;
+        }
+        &:hover {
+          opacity: 0.8;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .wrapper__header {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 2.4;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

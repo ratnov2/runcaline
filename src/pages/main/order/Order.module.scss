@@ -1,0 +1,113 @@
+.order {
+  position: relative;
+  padding: 50px 0 70px 0;
+  h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 0 0 50px 0;
+  }
+  .bgImg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    transform: scale(1, -1);
+  }
+  .content {
+    display: flex;
+    .content__left {
+      .imgs {
+        display: flex;
+        .asset1,
+        .asset2 {
+          position: relative;
+          border-radius: 100%;
+          width: 280px;
+          height: 200px;
+          overflow: hidden;
+        }
+
+        .asset2 {
+          background-color: #73bab8;
+          transform: translateX(-50px);
+          z-index: -1;
+        }
+        .asset1 {
+          border: 13px solid #00480c;
+        }
+        .asset1 img {
+          position: absolute;
+          top: -40px;
+          width: 260px;
+          aspect-ratio: 1;
+        }
+        .asset2 img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          width: 50px;
+        }
+      }
+    }
+    .content__right {
+      .imgs {
+        display: flex;
+        justify-content: right;
+        .asset1,
+        .asset2 {
+          position: relative;
+          border-radius: 100%;
+          width: 280px;
+          height: 200px;
+          overflow: hidden;
+        }
+
+        .asset2 {
+          background-color: #73bab8;
+          transform: translateX(50px);
+          z-index: -1;
+        }
+        .asset1 {
+          border: 13px solid #00480c;
+        }
+        .asset1 img {
+          position: absolute;
+          top: 0px;
+          width: 280px;
+          left: 0px;
+          aspect-ratio: 1.4;
+        }
+        .asset2 img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          width: 50px;
+        }
+      }
+    }
+    .text {
+      margin: 50px 0 0 0;
+      font-size: 20px;
+      line-height: 23px;
+      h5 {
+        text-align: center;
+        font-weight: 800;
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+      .text__left {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .text__right {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  }
+}

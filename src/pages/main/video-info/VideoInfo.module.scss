@@ -1,0 +1,35 @@
+.videoInfo {
+  position: relative;
+  padding: 40px 0 120px 0;
+  .bgImg {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    transform: scale(1, -1);
+  }
+  .content {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    .content__kley {
+      width: 150px;
+    }
+    p {
+      margin: auto;
+      font-size: 24px;
+      line-height: 28px;
+    }
+    .video {
+      flex: none;
+      width: 600px;
+      height: 600px;
+      > div {
+        height: 100%;
+      }
+      > div > div {
+        height: 100%;
+      }
+    }
+  }
+}
