@@ -1,4 +1,14 @@
-import { Button, Form, Input, Modal } from 'antd'
+import {
+  Alert,
+  Button,
+  Checkbox,
+  Drawer,
+  Form,
+  Input,
+  Modal,
+  Space,
+  Typography,
+} from 'antd'
 import { useRef, useState } from 'react'
 import styles from './Main.module.scss'
 import { Link } from 'react-router-dom'
@@ -12,12 +22,14 @@ import { Brand } from './brand/Brand'
 import { Order } from './order/Order'
 import { Feedback } from './feedback/Feedback'
 import { Footer } from './footer/Footer'
+import CookieConsent from '../../shared/ui/CookieConsent/CookieConsent'
 
 export const Main = () => {
   const [visible, setVisible] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLogin, setIsLogin] = useState(true)
+  const [visibleCookie, setVisibleCookie] = useState(true)
 
   const productRef = useRef<HTMLDivElement>(null)
   const mainRef = useRef<HTMLDivElement>(null)
@@ -69,6 +81,10 @@ export const Main = () => {
             value={password}
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
+          <div className={styles.auth__policy}>
+            <Checkbox />
+            <span>Я соглачен на обработку персональных данных</span>
+          </div>
         </Form>
         <div className={styles.buttons}>
           <Button onClick={() => setIsLogin(false)}>Регистрация</Button>
@@ -97,6 +113,7 @@ export const Main = () => {
         <Order ref={orderRef} />
         <Feedback ref={feedbackRef} />
       </div>
+      <CookieConsent />
       <Footer handleClick={handleClick} />
     </>
   )

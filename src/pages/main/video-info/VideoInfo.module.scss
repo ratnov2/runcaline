@@ -4,6 +4,7 @@
   .bgImg {
     width: 100%;
     position: absolute;
+    height: 100%;
     z-index: -1;
     top: 0px;
     transform: scale(1, -1);
@@ -30,6 +31,32 @@
       > div > div {
         height: 100%;
       }
+    }
+  }
+}
+
+@media (width < 1200px) {
+  .content {
+    .content__kley {
+      display: none;
+    }
+  }
+}
+@media (width < 1050px) {
+  .content {
+    flex-direction: column;
+    .video {
+      margin: auto;
+    }
+  }
+}
+
+@media (width < 1050px) {
+  .videoInfo .content {
+    .video {
+      width: 100%;
+      aspect-ratio: 1;
+      height: auto;
     }
   }
 }

@@ -5,11 +5,15 @@ import styles from './Feedback.module.scss'
 import { slideData } from './slide-item/slide.data'
 import { StarSVG } from '../../../assets/svg/StarSVG'
 import { SliderButton } from '../../../assets/svg/SliderButton'
-import { forwardRef, useRef, useState } from 'react'
+import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import { ShareWithPadding } from '../../../shared/ui/shareWithPadding/ShareWithPadding'
 
 export const Feedback = forwardRef<HTMLDivElement>((props, ref) => {
   const [slideIndex, setSlideIndex] = useState(0)
+  const { width } = useWindowSize()
+
+  console.log(width)
+
   const slideRef = useRef<SlideshowRef>(null)
   return (
     <div ref={ref} className={styles.feedback}>
@@ -32,7 +36,7 @@ export const Feedback = forwardRef<HTMLDivElement>((props, ref) => {
         <Slide
           ref={slideRef}
           slidesToScroll={1}
-          slidesToShow={2}
+          slidesToShow={width > 1050 ? 2 : 1}
           arrows={false}
         >
           {slideData.map((slide, index) => (
@@ -56,3 +60,26 @@ export const Feedback = forwardRef<HTMLDivElement>((props, ref) => {
     </div>
   )
 })
+
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  })
+
+  const handleResize = useCallback(() => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    })
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [handleResize])
+
+  return windowSize
+}

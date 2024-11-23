@@ -57,15 +57,6 @@ export const VideoInfo = forwardRef<HTMLDivElement>((props, ref) => {
           </p>
           <div className={styles.video}>
             <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
-            {/* <video
-            width={600}
-            height={600}
-            poster={videoImg}
-            controls
-            src="https://ik.imagekit.io/ikmedia/example_video.mp4"
-          >
-            f
-          </video> */}
           </div>
         </div>
       </ShareWithPadding>

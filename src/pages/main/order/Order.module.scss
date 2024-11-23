@@ -111,3 +111,31 @@
     }
   }
 }
+@media (width < 1200px) {
+  .order .content {
+    flex-direction: column;
+    gap: 40px;
+    .content__left .imgs,
+    .content__right .imgs {
+      justify-content: center;
+    }
+    .content__right .imgs {
+      transform: translateX(-60px);
+    }
+  }
+}
+@media (width < 550px) {
+  .order .content {
+    .content__left .imgs {
+      .asset2 {
+        display: none;
+      }
+    }
+    .content__right .imgs {
+      transform: translateX(0px);
+      .asset2 {
+        display: none;
+      }
+    }
+  }
+}
